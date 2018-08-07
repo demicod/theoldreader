@@ -8,7 +8,7 @@ import com.github.demicod.theoldreader.api.StatusApi
 import com.github.demicod.theoldreader.api.SubscriptionApi
 import com.github.demicod.theoldreader.api.UserApi
 
-class Theoldreader(val config: com.github.demicod.theoldreader.Config) {
+class Theoldreader(val config: Config) {
 	val auth = AuthApi(config)
 	val folders = FolderApi(config)
 	val friends = FriendApi(config)

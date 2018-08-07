@@ -1,8 +1,10 @@
 # theoldreader
-The Old Reader API library for Kotlin
+[The Old Reader](https://theoldreader.com) API library for Kotlin
 
 ### Build
-`gradlew jar`
+```bash
+gradlew jar
+```
 
 ### Usage
 ```kotlin
@@ -12,7 +14,7 @@ val theoldreader = Theoldreader(config)
 with(theoldreader) {
     // get current server status
     val status = status()
-		
+    
     // login and get token
     val clientLogin = auth.login(ClientLoginRequest("somebody@somewhere.net", "password"))
     val token = clientLogin!!.Auth
