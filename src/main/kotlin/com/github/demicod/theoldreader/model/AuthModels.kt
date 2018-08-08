@@ -9,7 +9,7 @@ data class ClientLogin(
 		val LSID: String,
 		val Auth: String)
 
-data class ClientLoginRequest (
+data class ClientLoginRequest @JvmOverloads constructor(
 		val email: String,
 		val passwd: String,
 		val accountType: AccountType? = AccountType.HOSTED_OR_GOOGLE,

@@ -40,7 +40,7 @@ data class UnreadCountList(
 		val max: Int,
 		val unreadcounts: List<UnreadCount>)
 
-data class UpdateSubscriptionRequest(
+data class UpdateSubscriptionRequest @JvmOverloads constructor(
 		override val token: String,
 		val streamId: String,
 		val title: String? = "",

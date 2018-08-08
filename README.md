@@ -1,12 +1,13 @@
 # theoldreader
 [The Old Reader](https://theoldreader.com) API library for Kotlin
 
-### Build
+## Build
 ```bash
 gradlew jar
 ```
 
-### Usage
+## Usage
+### Kotlin
 ```kotlin
 val config = Config("https://theoldreader.com", "Custom Client Name")
 val theoldreader = Theoldreader(config)
@@ -34,4 +35,32 @@ with(theoldreader) {
     // get friends
     val friends = friends.friendList(BaseRequest(token))
 }
+```
+### Java
+```java
+    Config config = new Config("https://theoldreader.com", "Custom Java Client");
+    Theoldreader theoldreader = new Theoldreader(config);
+
+    // get current server status
+    Status status = theoldreader.status();
+
+    // login and get token
+    ClientLogin clientLogin = theoldreader.getAuth().login(
+            new ClientLoginRequest("somebody@somewhere.net", "password"));
+    String token = clientLogin.getAuth();
+
+    // get user info
+    UserInfo info = theoldreader.getUsers().info(new BaseRequest(token));
+
+    // get subscriptions
+    SubscriptionList subscriptions = theoldreader.getSubscriptions().subscriptionList(new BaseRequest(token));
+
+    // get unread item ids
+    ItemIds itemIds = theoldreader.getItems().allItemIds(new ItemRequest(token, (Integer) null, (Integer) null, false));
+
+    // get folders
+    FolderList folders = theoldreader.getFolders().folderList(new BaseRequest(token));
+
+    // get friends
+    FriendList friends = theoldreader.getFriends().friendList(new BaseRequest(token));
 ```

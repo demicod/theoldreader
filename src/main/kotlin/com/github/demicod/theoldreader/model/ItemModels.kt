@@ -86,7 +86,7 @@ data class Comment(
 		val origin: Origin
 )
 
-open class ItemRequest(
+open class ItemRequest @JvmOverloads constructor(
 		override val token: String,
 		open val limit: Int? = null,
 		open val continuation: Int? = null,
@@ -96,7 +96,7 @@ open class ItemRequest(
 		open val newerThan: Instant? = null
 ) : BaseRequest(token)
 
-data class SubscriptionItemRequest(
+data class SubscriptionItemRequest @JvmOverloads constructor(
 		override val token: String,
 		val subscriptionId: String,
 		override val limit: Int? = null,
@@ -107,7 +107,7 @@ data class SubscriptionItemRequest(
 		override val newerThan: Instant? = null
 ) : ItemRequest(token, limit, continuation, unread, reverseOrder, olderThan, newerThan)
 
-data class FriendItemRequest(
+data class FriendItemRequest @JvmOverloads constructor(
 		override val token: String,
 		val friendId: String,
 		override val limit: Int? = null,
@@ -118,7 +118,7 @@ data class FriendItemRequest(
 		override val newerThan: Instant? = null
 ) : ItemRequest(token, limit, continuation, unread, reverseOrder, olderThan, newerThan)
 
-data class FolderItemRequest(
+data class FolderItemRequest @JvmOverloads constructor(
 		override val token: String,
 		val folder: String,
 		override val limit: Int? = null,
@@ -129,24 +129,24 @@ data class FolderItemRequest(
 		override val newerThan: Instant? = null
 ) : ItemRequest(token, limit, continuation, unread, reverseOrder, olderThan, newerThan)
 
-open class MarkAsReadRequest(
+open class MarkAsReadRequest @JvmOverloads constructor(
 		override val token: String,
 		open val olderThan: Instant? = null
 ) : BaseRequest(token)
 
-data class FriendMarkAsReadRequest(
+data class FriendMarkAsReadRequest @JvmOverloads constructor(
 		override val token: String,
 		val friendId: String,
 		override val olderThan: Instant? = null
 ) : MarkAsReadRequest(token, olderThan)
 
-data class FolderMarkAsReadRequest(
+data class FolderMarkAsReadRequest @JvmOverloads constructor(
 		override val token: String,
 		val folder: String,
 		override val olderThan: Instant? = null
 ) : MarkAsReadRequest(token, olderThan)
 
-data class SubscriptionMarkAsReadRequest(
+data class SubscriptionMarkAsReadRequest @JvmOverloads constructor(
 		override val token: String,
 		val subscriptionId: String,
 		override val olderThan: Instant? = null
