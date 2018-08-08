@@ -56,7 +56,8 @@ with(theoldreader) {
     SubscriptionList subscriptions = theoldreader.getSubscriptions().subscriptionList(new BaseRequest(token));
 
     // get unread item ids
-    ItemIds itemIds = theoldreader.getItems().allItemIds(new ItemRequest(token, (Integer) null, (Integer) null, false));
+    ItemIds itemIds = theoldreader.getItems().allItemIds(
+            new ItemRequest(token, (Integer) null, (Integer) null, true));
 
     // get folders
     FolderList folders = theoldreader.getFolders().folderList(new BaseRequest(token));
