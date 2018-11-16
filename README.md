@@ -1,5 +1,6 @@
-# theoldreader
-[The Old Reader](https://theoldreader.com) API library for Kotlin
+[![Build Status](https://travis-ci.org/demicod/theoldreader.svg?branch=master)](https://travis-ci.org/demicod/theoldreader)
+# theoldreader 
+[The Old Reader](https://theoldreader.com) API library for Kotlin 
 
 ## Build
 ```bash
